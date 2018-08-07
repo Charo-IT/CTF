@@ -85,7 +85,7 @@ Let's look into these points.
 
 ### 1. [Emscripten uses dlmalloc](https://github.com/kripken/emscripten/blob/3c4bc8e8ecb696e5a928bf96c59ff1a8256a9611/system/lib/dlmalloc.c)
 
-So, if you are fimiliar with recent heap exploitation techniques, you will be able to overwrite existing letters by exploiting off-by-one buffer overflow which exists in `add_letter` function.
+So, if you are familiar with recent heap exploitation techniques, you will be able to overwrite existing letters by exploiting off-by-one buffer overflow which exists in `add_letter` function.
 
 However, you have to keep in mind that there is [no fastbins](https://github.com/kripken/emscripten/blob/3c4bc8e8ecb696e5a928bf96c59ff1a8256a9611/system/lib/dlmalloc.c#L2620-L2643), and you can't allocate nor free a chunk when [its address is smaller than the base address of heap area](https://github.com/kripken/emscripten/blob/3c4bc8e8ecb696e5a928bf96c59ff1a8256a9611/system/lib/dlmalloc.c#L3050).
 
