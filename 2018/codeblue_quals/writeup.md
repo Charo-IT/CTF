@@ -213,7 +213,7 @@ void seal_letters(State *state, int post){
   (get_local $$59)  ;; arg3: letter->length  <- controllable
   (i32.add
    (i32.and
-    (get_local $$43)  ;; letter->filter
+    (get_local $$43)  ;; letter->filter  <- controllable
     (i32.const 15)
    )
    (i32.const 8)
